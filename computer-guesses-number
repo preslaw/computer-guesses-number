@@ -1,0 +1,28 @@
+def guess(range):
+  guessedNumber = int(range/2)
+  guessedRange = [0,range]
+  tries =1
+  
+  a ='N'
+  
+  while a!='y':
+    print ' I guess it is ', guessedNumber
+    a= input("did I guess the number y/n?")
+    if a =='y':
+      print 'Guessed after ',tries,' tries. Congratulations CPU!'
+      break
+    b = input("the number is 'h'igher or 'l'ower?")
+    if b == 'h':
+      guessedRange [0] = guessedNumber
+    if b =='l':
+      guessedRange [1] = guessedNumber
+    
+    if guessedRange[0] == guessedRange[1]:
+      print ('You are cheating!')
+      break
+      
+    guessedNumber = int((guessedRange[0]+guessedRange[1])/2)
+    tries +=1
+
+range = int(input('Please, give the range 0-'))
+guess(range)
